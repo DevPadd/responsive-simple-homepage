@@ -1,3 +1,14 @@
+:root {
+    --ff: "Poppins", sans-serif;
+    --transition: all 0.2s ease-in-out;
+    --color-primary: #2a4dd0;
+    --color-secondary: #4ca154;
+    --color3: #111729;
+    --color4: #223344;
+    --color5: #909193;
+    --color6: #f2f9fe;
+    --color7: #ffffff;
+}
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +16,7 @@
 }
 
 /* font styles */
-.poppins-thin {
+/* .poppins-thin {
     font-family: "Poppins", sans-serif;
     font-weight: 100;
     font-style: normal;
@@ -111,4 +122,187 @@
     font-family: "Poppins", sans-serif;
     font-weight: 900;
     font-style: italic;
+} */
+
+/* nav */
+nav {
+    display: flex;
+    padding: 1rem 2rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+nav .hamburger {
+    display: none;
+    flex-direction: column;
+    border: none;
+    gap: 0.4rem;
+}
+
+nav .hamburger span {
+    width: 2rem;
+    height: 0.3rem;
+    background-color: #223344;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: var(--ff);
+    font-weight: 600;
+    color: var(--color5);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
+}
+nav ul li a:hover,
+nav ul li a[href="#about-us"] {
+    color: var(--color4);
+}
+
+nav .dark-mode-toggle {
+    display: flex;
+    border-radius: 2rem;
+    border: none;
+    padding: 5px;
+    color: white;
+    text-align: center;
+    background-color: #223344;
+    cursor: pointer;
+}
+
+nav .dark-mode-toggle img:last-child {
+    background-color: white;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+/* main */
+main {
+    margin-top: 4rem;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+.text-container {
+    font-family: var(--ff);
+
+    width: 50%;
+}
+.text-container h4 {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+.text-container h1 {
+    font-size: 3.75rem;
+    max-width: 25rem;
+    margin-bottom: 2rem;
+}
+
+.text-container h3 {
+    font-size: 1.125rem;
+    color: var(--color5);
+    font-weight: 500;
+    max-width: 30rem;
+    margin-bottom: 4rem;
+}
+.text-container .btn-group {
+    margin-bottom: 4rem;
+}
+.text-container .btn-group a:first-child {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    margin-right: 2rem;
+}
+.text-container ul {
+    display: flex;
+    list-style: none;
+}
+.text-container ul li {
+    display: inline-flex;
+    color: var(--color5);
+}
+
+.text-container ul li:first-child {
+    margin-right: 1rem;
+}
+
+.text-container ul li span {
+    margin-right: 0.5rem;
+}
+.text-container ul li p {
+    font-size: 0.875rem;
+}
+.text-container .btn-group a:last-child {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* hero img */
+.hero-img-container {
+    text-align: center;
+    width: 50%;
+}
+.hero-img-container img {
+    max-width: 90%;
+    height: auto;
+}
+@media screen and (max-width: 1024px) {
+    main {
+        flex-direction: column-reverse;
+    }
+
+    .hero-img-container {
+        width: auto;
+    }
+    .text-container {
+        width: auto;
+    }
+    .text-container {
+        padding: 5rem 0;
+    }
+    .text-container h1 {
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 640px) {
+    nav ul,
+    nav .dark-mode-toggle {
+        display: none;
+    }
+
+    nav .hamburger {
+        display: flex;
+    }
+
+    .text-container h1 {
+        font-size: 3rem;
+    }
 }

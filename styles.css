@@ -127,40 +127,32 @@
 /* nav */
 nav {
     display: flex;
-    padding: 1rem 2rem;
+    padding: 1rem 4rem;
     justify-content: space-between;
     align-items: center;
 }
 
-nav ul {
+ul {
     display: flex;
     list-style: none;
     justify-content: space-evenly;
     width: 50%;
 }
 
-nav .hamburger {
+.hamburger {
     display: none;
     flex-direction: column;
     border: none;
-    gap: 0.4rem;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: transparent;
 }
 
-nav .hamburger span {
-    width: 2rem;
-    height: 0.3rem;
-    background-color: #223344;
-    border-radius: 0.5rem;
-    -webkit-border-radius: 0.5rem;
-    -moz-border-radius: 0.5rem;
-    -ms-border-radius: 0.5rem;
-    -o-border-radius: 0.5rem;
-}
-
-nav ul li a {
+ul li a {
     text-decoration: none;
     font-family: var(--ff);
     font-weight: 600;
+    font-size: 1rem;
     color: var(--color5);
     transition: var(--transition);
     -webkit-transition: var(--transition);
@@ -168,12 +160,12 @@ nav ul li a {
     -ms-transition: var(--transition);
     -o-transition: var(--transition);
 }
-nav ul li a:hover,
-nav ul li a[href="#about-us"] {
+ul li a:hover,
+ul li a[href="#about-us"] {
     color: var(--color4);
 }
 
-nav .dark-mode-toggle {
+.dark-mode-toggle {
     display: flex;
     border-radius: 2rem;
     border: none;
@@ -182,9 +174,10 @@ nav .dark-mode-toggle {
     text-align: center;
     background-color: #223344;
     cursor: pointer;
+    width: fit-content;
 }
 
-nav .dark-mode-toggle img:last-child {
+.dark-mode-toggle img:last-child {
     background-color: white;
     border-radius: 50%;
     margin-left: 0.5rem;
@@ -194,20 +187,86 @@ nav .dark-mode-toggle img:last-child {
     -o-border-radius: 50%;
 }
 
+.sidebar {
+    display: block;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 75%;
+    transform: translateX(25rem);
+    -webkit-transform: translateX(25rem);
+    -moz-transform: translateX(25rem);
+    -ms-transform: translateX(25rem);
+    -o-transform: translateX(25rem);
+    opacity: 0;
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+}
+.sidebar-active {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    opacity: 1;
+}
+
+.sidebar h1 {
+    margin-bottom: 2rem;
+}
+
+.sidebar h1 a {
+    text-decoration: none;
+    font-family: var(--ff);
+    color: var(--color5);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
+}
+
+.sidebar h1 a[href="#about-us"],
+.sidebar h1 a:hover {
+    color: var(--color4);
+}
+
+.sidebar .dark-mode-toggle {
+    scale: 0.8;
+}
+
+.sidebar-close {
+    cursor: pointer;
+    font-size: 2rem;
+    align-self: end;
+    margin: 1rem 1rem 5rem 0;
+}
+
 /* main */
 main {
     margin-top: 4rem;
-    padding: 0 2rem;
+    padding: 0 4rem;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 .text-container {
     font-family: var(--ff);
-
-    width: 50%;
 }
 .text-container h4 {
-    font-size: 0.875rem;
+    font-size: 1rem;
     text-transform: uppercase;
     margin-bottom: 1rem;
 }
@@ -248,14 +307,11 @@ main {
 .text-container ul li {
     display: inline-flex;
     color: var(--color5);
-}
-
-.text-container ul li:first-child {
-    margin-right: 1rem;
+    min-width: 13rem;
 }
 
 .text-container ul li span {
-    margin-right: 0.5rem;
+    margin-right: 0.2rem;
 }
 .text-container ul li p {
     font-size: 0.875rem;
@@ -267,16 +323,18 @@ main {
 
 /* hero img */
 .hero-img-container {
-    text-align: center;
-    width: 50%;
+    width: 46%;
 }
 .hero-img-container img {
-    max-width: 90%;
-    height: auto;
+    width: 100%;
 }
 @media screen and (max-width: 1024px) {
     main {
         flex-direction: column-reverse;
+        padding: 0 2rem;
+    }
+    nav {
+        padding: 1rem 2rem;
     }
 
     .hero-img-container {
@@ -293,6 +351,17 @@ main {
     }
 }
 @media screen and (max-width: 640px) {
+    main {
+        flex-direction: column-reverse;
+        padding: 0 0rem;
+    }
+
+    .text-container {
+        padding: 6rem 1rem;
+    }
+    nav {
+        padding: 1rem 1rem;
+    }
     nav ul,
     nav .dark-mode-toggle {
         display: none;

@@ -10,11 +10,16 @@
             href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet"
         />
+        <script
+            src="https://kit.fontawesome.com/5f8b99fe68.js"
+            crossorigin="anonymous"
+        ></script>
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
         <nav>
             <img src="assets/alarado-icon-homepage.svg" alt="logo" />
+
             <ul>
                 <li><a href="#about-us">About us</a></li>
                 <li><a href="#">Product</a></li>
@@ -26,12 +31,23 @@
                 <img src="assets/Sun_fill.svg" alt="" />
             </div>
             <button class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span><i class="fa-solid fa-bars"></i></span>
             </button>
         </nav>
+        <div class="sidebar">
+            <div class="sidebar-close">
+                <span><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <h1><a href="#about-us">About us</a></h1>
+            <h1><a href="#">Product</a></h1>
+            <h1><a href="#">Resource</a></h1>
+            <h1><a href="#">Contact</a></h1>
 
+            <div class="dark-mode-toggle">
+                <img src="assets/Moon_fill_light.svg" alt="" />
+                <img src="assets/Sun_fill.svg" alt="" />
+            </div>
+        </div>
         <main>
             <div class="text-container">
                 <h4>😎 Simple way to communicate</h4>
@@ -68,5 +84,6 @@
                 <img src="assets/hero-image-simple-homepage.png" alt="hero" />
             </div>
         </main>
+        <script src="script.js"></script>
     </body>
 </html>

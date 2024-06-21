@@ -14,6 +14,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    transition: background-color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out;
+    -moz-transition: background-color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out;
+    -o-transition: background-color 0.2s ease-in-out;
+}
+.dark-mode {
+    background-color: var(--color3);
+}
 
 /* font styles */
 /* .poppins-thin {
@@ -164,6 +174,13 @@ ul li a:hover,
 ul li a[href="#about-us"] {
     color: var(--color4);
 }
+.dark-mode ul li a {
+    color: #909193;
+}
+.dark-mode ul li a:hover,
+.dark-mode li a[href="#about-us"] {
+    color: var(--color7);
+}
 
 .dark-mode-toggle {
     display: flex;
@@ -188,9 +205,8 @@ ul li a[href="#about-us"] {
 }
 
 .sidebar {
-    display: block;
+    display: none;
     background-color: white;
-    display: flex;
     flex-direction: column;
     align-items: center;
     position: fixed;
@@ -276,6 +292,11 @@ main {
     margin-bottom: 2rem;
 }
 
+.dark-mode .text-container h4,
+.dark-mode .text-container h1 {
+    color: var(--color7);
+}
+
 .text-container h3 {
     font-size: 1.125rem;
     color: var(--color5);
@@ -299,22 +320,37 @@ main {
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
     margin-right: 2rem;
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
 }
+
+.text-container .btn-group a:first-child:hover {
+    background-color: #2441ad;
+}
+
 .text-container ul {
     display: flex;
     list-style: none;
 }
 .text-container ul li {
-    display: inline-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--color5);
-    min-width: 13rem;
+}
+.text-container ul li:first-child {
+    margin-right: 1rem;
 }
 
-.text-container ul li span {
+.text-container ul li img {
     margin-right: 0.2rem;
 }
 .text-container ul li p {
     font-size: 0.875rem;
+    text-wrap: nowrap;
 }
 .text-container .btn-group a:last-child {
     font-weight: 600;
@@ -355,7 +391,9 @@ main {
         flex-direction: column-reverse;
         padding: 0 0rem;
     }
-
+    .sidebar {
+        display: flex;
+    }
     .text-container {
         padding: 6rem 1rem;
     }
